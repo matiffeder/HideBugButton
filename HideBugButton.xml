@@ -1,0 +1,15 @@
+<Ui xmlns="http://www.runewaker.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.runewaker.com/ UI.xsd">
+	<Frame name="HideBugButton" parent="UIParent" hidden="true">
+		<Scripts>
+			<OnLoad>
+				this:RegisterEvent("SCRIPT_RUNTIME_ERROR"); 
+			</OnLoad>
+			<OnEvent>
+				if event=="SCRIPT_RUNTIME_ERROR" then
+					MinimapFrameBugGartherButton:Hide();
+					DEFAULT_CHAT_FRAME:AddMessage(string.format("[Error]: %s", arg1), .7, .3, .3);
+				end
+			</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>
